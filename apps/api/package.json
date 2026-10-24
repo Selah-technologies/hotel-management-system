@@ -1,0 +1,9 @@
+{
+  "name": "@hms/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HMS backend API",
+  "scripts": {
+    "check:node": "node --version"
+  }
+}

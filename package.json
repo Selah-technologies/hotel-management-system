@@ -1,0 +1,16 @@
+{
+  "name": "hotel-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hotel Management System monorepo",
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "apps/staff",
+    "packages/shared"
+  ],
+  "scripts": {
+    "check:node": "node --version",
+    "check:npm": "npm --version"
+  }
+}

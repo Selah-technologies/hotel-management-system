@@ -1,0 +1,16 @@
+# Store LF line endings in the repository and in working copies.
+# This keeps files identical on Windows, macOS and Linux.
+* text=auto eol=lf
+
+# Files that must never be converted
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.docx binary
+*.zip binary
