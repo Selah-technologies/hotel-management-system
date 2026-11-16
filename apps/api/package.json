@@ -4,7 +4,8 @@
   "private": true,
   "description": "HMS backend API",
   "scripts": {
-    "check:node": "node --version"
+    "check:node": "node --version",
+    "db:check": "tsx scripts/db-check.ts"
   },
   "type": "module",
   "devDependencies": {
