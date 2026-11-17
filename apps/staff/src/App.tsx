@@ -1,8 +1,10 @@
 export default function App() {
   return (
-    <main>
-      <h1>HMS Staff Dashboard</h1>
-      <p>Setup check: React, TypeScript and Vite are working.</p>
+    <main className="min-h-screen bg-slate-100 p-8">
+      <h1 className="text-3xl font-bold text-slate-900">HMS Staff Dashboard</h1>
+      <p className="mt-2 text-slate-600">
+        Setup check: React, TypeScript, Vite and Tailwind CSS are working.
+      </p>
     </main>
   );
 }
