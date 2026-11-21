@@ -1,3 +1,4 @@
+import { hasAnyPermission } from "./auth/permissions";
 import type { CurrentUser, Permission } from "./auth/types";
 
 export type NavItem = {
@@ -28,8 +29,10 @@ export const NAV_ITEMS: NavItem[] = [
 
 // Convenience for honest users only. The backend decides what is actually allowed.
 export function visibleNavItems(user: CurrentUser | null): NavItem[] {
-  if (!user) return [];
-  return NAV_ITEMS.filter(
-    (item) => !item.anyOf || item.anyOf.some((p) => user.permissions.includes(p)),
-  );
+  return NAV_ITEMS.filter((item) => hasAnyPermission(user, item.anyOf));
+}
+
+// Finds the menu item that owns an address, e.g. "/reservations/42" belongs to "/reservations".
+export function findNavItem(pathname: string): NavItem | undefined {
+  return NAV_ITEMS.find((item) => pathname === item.to || pathname.startsWith(`${item.to}/`));
 }
