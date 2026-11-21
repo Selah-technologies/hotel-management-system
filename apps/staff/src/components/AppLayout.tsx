@@ -1,11 +1,7 @@
-import { useState } from "react";
 import { NavLink, Outlet } from "react-router";
-
-// Menu items for pages that exist so far. More are added as pages are built.
-const NAV_ITEMS = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/rooms", label: "Rooms" },
-];
+import { useAuth } from "../auth/useAuth";
+import { visibleNavItems } from "../navigation";
+import { useState } from "react";
 
 // Uses the browser's clock. The hotel's time zone is TO BE CONFIRMED WITH HOTEL.
 function formatToday(): string {
@@ -19,7 +15,8 @@ function formatToday(): string {
 
 export default function AppLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { user } = useAuth();
+  const navItems = visibleNavItems(user);
   return (
     <div className="min-h-screen bg-white text-ink md:flex">
       <a
@@ -53,7 +50,7 @@ export default function AppLayout() {
           className={`${menuOpen ? "block" : "hidden"} p-3 md:block`}
         >
           <ul className="space-y-1">
-            {NAV_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
@@ -77,7 +74,9 @@ export default function AppLayout() {
       <div className="flex min-h-screen flex-1 flex-col">
         <header className="hidden h-16 items-center justify-between border-b border-line px-8 md:flex">
           <p className="text-sm text-ink-soft">{formatToday()}</p>
-          <p className="text-sm text-ink-soft">Not signed in</p>
+  <p className="text-sm text-ink-soft">
+  {user ? `Test role: ${user.role} (temporary, not a real sign-in)` : "Not signed in"}
+</p>
         </header>
         <main id="main" tabIndex={-1} className="flex-1 px-4 py-8 outline-none md:px-8">
           <div className="mx-auto max-w-5xl">
