@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+/* Colours live here only. Brand colours are TO BE CONFIRMED WITH HOTEL. */
+@theme {
+  --color-ink: #14141c;
+  --color-ink-soft: #666672;
+  --color-line: #e6e6ea;
+  --color-sidebar: #f7f7f8;
+  --color-night: #14141c;
+  --color-night-line: #2a2a35;
+  --color-night-soft: #a8a8b3;
+    --color-danger: #b42318;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
