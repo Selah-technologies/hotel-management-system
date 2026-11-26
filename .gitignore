@@ -29,3 +29,6 @@ desktop.ini
 
 # Keys and certificates
 *.pem
+
+# Generated Prisma Client (recreate it with prisma generate)
+apps/api/src/generated/
