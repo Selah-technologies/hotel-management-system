@@ -8,6 +8,7 @@ import RoomsPage from "./pages/RoomsPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import LoginPage from "./pages/LoginPage";
+import HousekeepingPage from "./pages/HousekeepingPage";
 
 export default function AppRoutes() {
   return (
@@ -21,7 +22,7 @@ export default function AppRoutes() {
           <Route path="/reservations" element={<ComingSoonPage title="Reservations" />} />
           <Route path="/stays" element={<ComingSoonPage title="Check-in / out" />} />
           <Route path="/guests" element={<ComingSoonPage title="Guests" />} />
-          <Route path="/housekeeping" element={<ComingSoonPage title="Housekeeping" />} />
+                   <Route path="/housekeeping" element={<HousekeepingPage />} />
           <Route path="/maintenance" element={<ComingSoonPage title="Maintenance" />} />
                    <Route path="/reports" element={<ReportsPage />} />
           <Route path="/reports/:slug" element={<ReportPage />} />
