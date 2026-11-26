@@ -1,3 +1,5 @@
+import ReportPage from "./pages/ReportPage";
+import ReportsPage from "./pages/ReportsPage";
 import { Navigate, Route, Routes } from "react-router";
 import RequireAccess from "./auth/RequireAccess";
 import AppLayout from "./components/AppLayout";
@@ -21,7 +23,8 @@ export default function AppRoutes() {
           <Route path="/guests" element={<ComingSoonPage title="Guests" />} />
           <Route path="/housekeeping" element={<ComingSoonPage title="Housekeeping" />} />
           <Route path="/maintenance" element={<ComingSoonPage title="Maintenance" />} />
-          <Route path="/reports" element={<ComingSoonPage title="Reports" />} />
+                   <Route path="/reports" element={<ReportsPage />} />
+          <Route path="/reports/:slug" element={<ReportPage />} />
           <Route path="/users" element={<ComingSoonPage title="Users" />} />
           <Route path="/settings" element={<ComingSoonPage title="Settings" />} />
           <Route path="/audit" element={<ComingSoonPage title="Audit log" />} />
